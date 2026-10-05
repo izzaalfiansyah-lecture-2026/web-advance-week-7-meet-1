@@ -1,0 +1,147 @@
+:root {
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --primary: #2563eb;
+  --border: #e2e8f0;
+  --accent: #1d4ed8;
+
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
+}
+
+.dark {
+  --background: #121416;
+  --foreground: #f8f9fa;
+  --muted: #212529;
+  --muted-foreground: #adb5bd;
+  --primary: #3d8bfd;
+  --border: #343a40;
+  --accent: #6ea8fe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 100%;
+
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.header__brand {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.theme-toggler {
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  transition: background 0.15s ease;
+}
+
+.dark .theme-toggler {
+  background: #333333;
+}
+
+.theme-toggler:hover {
+  opacity: 0.85;
+}
+
+.theme-toggler:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.main-content__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.main-content__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.main-content__subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.theme-info,
+.benefits-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.theme-info li,
+.benefits-list li {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.footer__link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__link:hover {
+  opacity: 0.8;
+}
